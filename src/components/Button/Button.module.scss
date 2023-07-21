@@ -1,0 +1,85 @@
+.wrapepr {
+    font-size: 1.6rem;
+    font-weight: 700;
+    min-width: 100px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    background-color: var(--whiteColor);
+    border: 1px solid transparent;
+    user-select: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    + .wrapepr {
+        margin-left: 16px;
+    }
+}
+
+// button style
+.primary {
+    background-color: var(--primary);
+    color: var(--whiteColor);
+    &:hover {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), rgb(254, 44, 85);
+        cursor: pointer;
+    }
+}
+
+.outline {
+    color: var(--primary);
+    border-color: currentColor;
+    &:hover {
+        background-color: rgba(254, 44, 85, 0.08);
+        cursor: pointer;
+    }
+}
+
+.rounded {
+    border-radius: 999px;
+    color: rgba(22, 24, 35, 0.75);
+    background-color: var(--whiteColor);
+    border-color: rgba(22, 24, 35, 0.12);
+    font-size: 14px;
+    min-width: 90px;
+    padding: 7.2px 16px;
+    &:hover {
+        border-color: rgba(22, 24, 35, 0.2);
+        background-color: var(--whiteColor);
+
+        cursor: pointer;
+    }
+}
+// button size
+.small {
+    min-width: 96px;
+    padding: 8px 16px;
+}
+
+.large {
+    min-width: 168px;
+    padding: 14px 16px;
+}
+
+// button text
+.text {
+    border-color: rgba(22, 24, 35, 0.12);
+    border-radius: 2px;
+    background: var(--whiteColor);
+    color: var(--textColor);
+    font-weight: 600;
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+}
+.leftIcon {
+    margin-right: 8px;
+    display: inline-block;
+    width: 20px;
+    text-align: center;
+}
+// button disable
+.disable {
+    pointer-events: none;
+    opacity: 0.5;
+}

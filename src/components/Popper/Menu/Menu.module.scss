@@ -1,0 +1,38 @@
+// menu
+.content {
+    width: 223px;
+    position: relative;
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 1px;
+        top: -38px;
+        border-width: 25px 12px;
+        border-style: solid;
+        border-color: transparent transparent #fff transparent;
+    }
+    .menuItem {
+        margin-left: 0;
+    }
+}
+
+.menu_Popper {
+    padding-bottom: 8px;
+}
+// menu Items
+.menu_Item {
+    width: 100%;
+    justify-content: flex-start;
+    border-radius: 0;
+    font-weight: 600;
+    color: rgb(22, 24, 35);
+    padding: 9.2px 16px;
+    font-size: 1.6rem;
+    line-height: 21px;
+    &:hover {
+        cursor: pointer;
+        background: rgba(22, 24, 35, 0.03);
+    }
+}

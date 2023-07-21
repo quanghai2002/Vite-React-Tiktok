@@ -1,11 +1,21 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { lazy, Fragment } from 'react';
+import { lazy, Fragment, useState, useCallback } from 'react';
+import { Switch } from '@mui/material';
+import { Label } from '@mui/icons-material';
 const DefaultLayout = lazy(() => import('./components/Layout/DefaultLayput'));
 
 import { publicRoutes } from './routes';
 function App() {
+    const [checked, setChecked] = useState(false);
+    const handleChange = useCallback(() => {
+        setChecked((prev) => {
+            return !prev;
+        });
+    }, []);
+
     return (
         <>
+            <Switch checked={checked} onChange={handleChange} inputProps={{ 'aria-label': 'controlled' }} />
             <BrowserRouter>
                 <div className="App">
                     <Routes>
