@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import { Link } from 'react-router-dom';
 import style from './Button.module.scss';
+
 function Button({
     to,
     href,
@@ -14,8 +15,10 @@ function Button({
     textIcon = false,
     disable = false,
     rounded = false,
-    leftIcon,
+    leftIcon = false,
+    rightIcon = false,
     className,
+    dark,
     ...passProps
 }) {
     let Component = 'button';
@@ -40,12 +43,14 @@ function Button({
         [style.textIcon]: textIcon,
         [style.disable]: disable,
         [style.rounded]: rounded,
+        [style.dark]: dark,
     });
 
     return (
         <Component className={classes} {...props}>
             {leftIcon && <span className={clsx(style.leftIcon)}>{leftIcon}</span>}
             <span>{children}</span>
+            {rightIcon && <span className={clsx(style.rightIcon)}>{rightIcon}</span>}
         </Component>
     );
 }

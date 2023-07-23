@@ -1,5 +1,4 @@
 @import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
 
 * {
     padding: 0;
@@ -12,10 +11,13 @@ html {
 }
 // body
 body {
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'TikTokFont', sans-serif;
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizespeed;
+}
+button {
+    font-family: 'TikTokFont', sans-serif;
 }
 
 // variables
@@ -23,6 +25,7 @@ body {
 :root {
     --primary: #fe2c55;
     --whiteColor: rgb(255, 255, 255);
+    --backColor: #000;
     --textColor: rgb(22, 24, 35);
 }
 
@@ -35,5 +38,53 @@ input,
 
 a[href] {
     text-decoration: none;
-    color: var(--textColor);
+}
+
+// nhúng Fonts
+
+@font-face {
+    font-family: TikTokFont;
+    src: url('/src/assets/fonts/TikTokFont-Regular.woff2');
+    font-weight: 400;
+}
+@font-face {
+    font-family: TikTokFont;
+    src: url('/src/assets/fonts/TikTokFont-Semibold.woff2');
+    font-weight: 600;
+}
+@font-face {
+    font-family: TikTokFont;
+    src: url('/src/assets/fonts/TikTokFont-Bold.woff2');
+    font-weight: 700;
+}
+@font-face {
+    font-family: TikTokDisplayFont;
+    src: url('/src/assets/fonts/TikTokDisplayFont-Bold.woff2');
+    font-weight: 700;
+}
+
+// dark light
+.dark {
+    background-color: #121212;
+    --textColor: var(--whiteColor);
+}
+
+// overwrite tipy totip
+body {
+    .tippy-box {
+        background-color: rgba(84, 84, 84, 0.92);
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1.6rem;
+        line-height: 2.1rem;
+        color: rgb(255, 255, 255);
+        padding: 3px;
+        text-align: center;
+    }
+    .tippy-arrow {
+        color: rgba(84, 84, 84, 0.92);
+    }
+    .tippy-box[data-placement^='bottom'] > .tippy-arrow {
+        top: -1px;
+    }
 }

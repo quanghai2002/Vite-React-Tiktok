@@ -7,9 +7,9 @@
         content: '';
         display: block;
         position: absolute;
-        right: 1px;
+        right: 6%;
         top: -38px;
-        border-width: 25px 12px;
+        border-width: 21px 12px;
         border-style: solid;
         border-color: transparent transparent #fff transparent;
     }
@@ -35,4 +35,29 @@
         cursor: pointer;
         background: rgba(22, 24, 35, 0.03);
     }
+    &.separate {
+        border-top: 1px solid rgba(22, 24, 35, 0.12);
+    }
+}
+// Header
+.header {
+    position: relative;
+    height: 50px;
+    color: var(--textColor);
+    margin-top: -8px;
+}
+.back_Btn {
+    width: 48px;
+    height: 100%;
+    background-color: transparent;
+    cursor: pointer;
+}
+.header_Title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 21px;
 }

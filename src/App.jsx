@@ -1,51 +1,52 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { lazy, Fragment, useState, useCallback } from 'react';
-import { Switch } from '@mui/material';
-import { Label } from '@mui/icons-material';
+import { lazy, Fragment, useState, createContext } from 'react';
+
 const DefaultLayout = lazy(() => import('./components/Layout/DefaultLayput'));
 
+const ThemContext = createContext();
 import { publicRoutes } from './routes';
 function App() {
-    const [checked, setChecked] = useState(false);
-    const handleChange = useCallback(() => {
-        setChecked((prev) => {
-            return !prev;
-        });
-    }, []);
+    const [theme, setTheme] = useState(false);
+    // const handleChange = useCallback(() => {
+    //     setChecked((prev) => {
+    //         return !prev;
+    //     });
+    // }, []);
 
     return (
-        <>
-            <Switch checked={checked} onChange={handleChange} inputProps={{ 'aria-label': 'controlled' }} />
-            <BrowserRouter>
-                <div className="App">
-                    <Routes>
-                        {publicRoutes.map((route) => {
-                            let Layout = DefaultLayout;
+        <div className={theme ? 'dark' : ''}>
+            <ThemContext.Provider value={[theme, setTheme]}>
+                <BrowserRouter>
+                    <div className="App">
+                        <Routes>
+                            {publicRoutes.map((route) => {
+                                let Layout = DefaultLayout;
 
-                            if (route.layout) {
-                                Layout = route.layout;
-                            } else if (route.layout === null) {
-                                Layout = Fragment;
-                            }
+                                if (route.layout) {
+                                    Layout = route.layout;
+                                } else if (route.layout === null) {
+                                    Layout = Fragment;
+                                }
 
-                            const Page = route.component;
-                            return (
-                                <Route
-                                    key={route.id}
-                                    path={route.path}
-                                    element={
-                                        <Layout>
-                                            <Page />
-                                        </Layout>
-                                    }
-                                />
-                            );
-                        })}
-                    </Routes>
-                </div>
-            </BrowserRouter>
-        </>
+                                const Page = route.component;
+                                return (
+                                    <Route
+                                        key={route.id}
+                                        path={route.path}
+                                        element={
+                                            <Layout>
+                                                <Page />
+                                            </Layout>
+                                        }
+                                    />
+                                );
+                            })}
+                        </Routes>
+                    </div>
+                </BrowserRouter>
+            </ThemContext.Provider>
+        </div>
     );
 }
-
+export { ThemContext };
 export default App;
