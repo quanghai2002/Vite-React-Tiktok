@@ -21,6 +21,10 @@
 .menu_Popper {
     padding-bottom: 8px;
 }
+.menu_body {
+    overflow-y: auto;
+    max-height: 590px;
+}
 // menu Items
 .menu_Item {
     width: 100%;

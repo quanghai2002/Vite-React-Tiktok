@@ -1,5 +1,14 @@
 @import 'normalize.css';
 
+// variables
+
+:root {
+    --primary: #fe2c55;
+    --whiteColor: rgb(255, 255, 255);
+    --backColor: #000;
+    --textColor: rgb(22, 24, 35);
+    --font-family: 'TikTokFont', sans-serif;
+}
 * {
     padding: 0;
     margin: 0;
@@ -11,22 +20,32 @@ html {
 }
 // body
 body {
-    font-family: 'TikTokFont', sans-serif;
+    font-family: var(--font-family);
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizespeed;
+    overflow-y: overlay;
 }
+
+// scrollbar css
+
+html *::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+}
+
+html *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(22, 24, 35, 0.06);
+}
+
+html *::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
 button {
-    font-family: 'TikTokFont', sans-serif;
-}
-
-// variables
-
-:root {
-    --primary: #fe2c55;
-    --whiteColor: rgb(255, 255, 255);
-    --backColor: #000;
-    --textColor: rgb(22, 24, 35);
+    font-family: var(--font-family);
 }
 
 button,

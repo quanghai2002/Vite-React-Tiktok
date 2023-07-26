@@ -6,7 +6,7 @@ import MenuItem from './MenuItem';
 import Header from './Header';
 import { useState } from 'react';
 
-function Menu({ children, items = [], onChange = defaultFn }) {
+function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn }) {
     function defaultFn() {}
     const [history, setHistory] = useState([
         {
@@ -44,6 +44,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
             interactive
             placement="bottom-end"
             delay={[0, 800]}
+            hideOnClick={hideOnClick}
             render={(attrs) => (
                 <div className={clsx(style.content)} tabIndex={-1} {...attrs}>
                     <Wrapper className={clsx(style.menu_Popper)}>
@@ -58,7 +59,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
                             />
                         )}
 
-                        {renderItems()}
+                        <div className={clsx(style.menu_body)}> {renderItems()}</div>
                     </Wrapper>
                 </div>
             )}

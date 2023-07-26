@@ -1,0 +1,111 @@
+.wrapper {
+    --search-border-radius: 92px;
+    height: 60px;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    width: 100%;
+    background-color: var(--whiteColor);
+}
+
+.lightWrapper {
+    @extend .wrapper;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px;
+}
+.darkWrapper {
+    @extend .wrapper;
+    box-shadow: rgba(255, 255, 255, 0.12) 0px 1px 1px;
+}
+
+.inner {
+    height: 100%;
+    width: 100%;
+    padding-right: 24px;
+    padding-left: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    cursor: pointer;
+    .offsetLogoTikTok {
+        margin-top: 11px;
+    }
+}
+
+.textIcon {
+    height: 16px;
+    width: 16px;
+    margin-right: 8px;
+}
+
+.action {
+    display: flex;
+    align-items: center;
+}
+
+.moreBtn {
+    cursor: pointer;
+    font-size: 2rem;
+    margin-left: 14px;
+    padding: 4px 10px;
+    color: var(--backColor);
+    background-color: transparent;
+}
+
+.btn_2 {
+    margin-left: -1px;
+}
+.dark_Search {
+    background: rgba(255, 255, 255, 0.12) !important;
+}
+.dark {
+    color: #fff;
+    .moreBtn {
+        color: var(--whiteColor);
+    }
+}
+
+// user login
+.action_Btn {
+    background-color: transparent;
+    padding: 3px 3px 0px;
+    position: relative;
+    margin-left: 16px;
+    cursor: pointer;
+    height: 32px;
+    font-size: 2.1rem;
+    color: var(--textColor);
+    position: relative;
+    .action_Btn_message {
+        position: absolute;
+        left: 16px;
+        top: -7px;
+        color: var(--whiteColor);
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 0.093px;
+        border-radius: 10px;
+        background: var(--primary);
+        text-align: center;
+        min-width: 20px;
+        height: 20px;
+        padding: 0;
+    }
+    .action_Btn_message_big {
+        @extend .action_Btn_message;
+        padding: 0px 6px;
+        top: -20%;
+    }
+}
+
+.user_Avatar {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 24px;
+}

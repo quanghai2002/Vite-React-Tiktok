@@ -1,5 +1,9 @@
+import { useParams } from 'react-router-dom';
+
 function Profile() {
-    return <h2>Profile</h2>;
+    let paramNickname = useParams();
+
+    return <h2>Profile {paramNickname.nickname}</h2>;
 }
 
 export default Profile;
